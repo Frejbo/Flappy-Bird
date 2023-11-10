@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "iPSgKOP9g61i20I3COymWzy4L0LxHO1FK5uF7T4D8qx2ON1IJ1Rbr9vWgJg/jYY+5JJMx4liXpHcTo1ufptb1w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Frej\\Documents\\Programmering\\Flappy-Bird\\Flappy-Bird\\Flappy-Bird.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Frej\\.nuget\\packages\\raylib-cs\\5.0.0\\raylib-cs.5.0.0.nupkg.sha512",
+    "C:\\Users\\Frej\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
