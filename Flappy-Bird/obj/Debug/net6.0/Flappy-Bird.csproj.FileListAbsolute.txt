@@ -20,3 +20,29 @@ C:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\obj\Debug\net6.0\r
 C:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\obj\Debug\net6.0\Flappy-Bird.pdb
 C:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\obj\Debug\net6.0\Flappy-Bird.genruntimeconfig.cache
 C:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\obj\Debug\net6.0\ref\Flappy-Bird.dll
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Background\Background1.png
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Background\Background2.png
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Background\Background3.png
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Background\Background4.png
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Background\Background5.png
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Background\Background6.png
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\demo-img-1.png
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\demo-img-2.png
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\demo-img-3.png
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Pipe.png
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Player\bird1.png
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Player\bird2.png
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Player\bird3.png
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Player\gif\bird1gif.gif
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Player\gif\bird2gif.gif
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Player\gif\bird3gif.gif
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\readme.txt
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Tileset\Style 1\OldS2.png
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Tileset\Style 1\PipeStyle1.png
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Tileset\Style 1\TileStyle1.png
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Tileset\Style 2\OldS2.png
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Tileset\Style 2\PipeStyle2.png
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Tileset\Style 2\TileStyle2.png
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Tileset\Style 3\OldS3.png
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Tileset\Style 3\PipeStyle3.png
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Tileset\Style 3\TileStyle3.png

@@ -5,6 +5,7 @@ class Bird {
     float GRAVITY = 30;
     int JUMPSPEED = 800;
     float velocity = 0;
+    Texture2D texture = Raylib.LoadTexture("Assets/Player/bird1.png");
     public void Tick() {
         velocity += GRAVITY;
         if (Raylib.IsKeyPressed(KeyboardKey.KEY_SPACE)) {
@@ -14,6 +15,6 @@ class Bird {
         posY += (int)(velocity * Raylib.GetFrameTime());
     }
     public void Draw() {
-        Raylib.DrawRectangle(50, posY, 16, 16, Color.YELLOW);
+        Raylib.DrawTexture(texture, 50, posY, Color.YELLOW);
     }
 }
