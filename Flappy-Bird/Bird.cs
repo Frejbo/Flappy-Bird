@@ -4,7 +4,7 @@ using System.Numerics;
 class Bird {
     int posY = Raylib.GetScreenHeight()/2;
     float GRAVITY = 30;
-    int JUMPSPEED = 800;
+    int JUMPSPEED = 600;
     float velocity = 0;
     float rotation = 0;
     Texture2D texture = Raylib.LoadTexture("Assets/Player/Bird.png");

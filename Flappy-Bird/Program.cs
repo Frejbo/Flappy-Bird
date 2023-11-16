@@ -5,7 +5,7 @@ Raylib.SetTargetFPS(60);
 
 Bird bird = new Bird();
 bool gameIsRunning = false;
-int PipesVisible = 3;
+int PipesVisible = 5;
 List<Obstacle> obstacles = new();
 
 while (!Raylib.WindowShouldClose()) {
