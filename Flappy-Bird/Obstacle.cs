@@ -5,6 +5,7 @@ class Obstacle {
     Texture2D texture = Raylib.LoadTexture("Assets/Pipe.png");
     Random random = new Random();
     Vector2 position = new Vector2(Raylib.GetScreenWidth(), 0);
+    Rectangle collision = new Rectangle(0, 0, 32, 94);
     int SPEED = 3;
     public Obstacle() {
         texture.Width *= 4;
@@ -13,6 +14,20 @@ class Obstacle {
     }
     public void Tick() {
         position.X -= SPEED;
+    }
+    public bool isColliding(Rectangle rect) {
+        collision.X = position.X;
+        collision.Y = position.Y;
+        Console.WriteLine(rect);
+        Console.WriteLine(collision);
+        if (Raylib.CheckCollisionRecs(collision, rect)) {
+            return true;
+        }
+        collision.Y = texture.Height - collision.Height;
+        if (Raylib.CheckCollisionRecs(collision, rect)) {
+            return true;
+        }
+        return false;
     }
     public void Draw() {
         Raylib.DrawTexture(texture, (int)position.X, (int)position.Y, Color.WHITE);

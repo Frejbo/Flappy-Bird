@@ -5,7 +5,7 @@ Raylib.SetTargetFPS(60);
 
 Bird bird = new Bird();
 bool gameIsRunning = false;
-int PipesVisible = 5;
+int PipesVisible = 4;
 List<Obstacle> obstacles = new();
 
 while (!Raylib.WindowShouldClose()) {
@@ -19,18 +19,17 @@ while (!Raylib.WindowShouldClose()) {
     bird.Tick();
 
     foreach (Obstacle o in obstacles) {
-        o.Tick();        
+        o.Tick();
+        Console.WriteLine(o.isColliding(bird.GetRect()));        
     }
     if (obstacles.Count < PipesVisible) {
         if (obstacles.Count() == 0 || obstacles[obstacles.Count-1].SpaceForNew(PipesVisible)) {
             obstacles.Add(new Obstacle());
-            Console.WriteLine("Spawning pipe");
         }
     }
     if (obstacles[0].ShouldRemove()) {
-        obstacles.RemoveAt(0); //maybe assing again?
+        obstacles.RemoveAt(0);
     }
-    Console.WriteLine(obstacles);
 
     Draw();
 }
