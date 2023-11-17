@@ -20,7 +20,9 @@ while (!Raylib.WindowShouldClose()) {
 
     foreach (Obstacle o in obstacles) {
         o.Tick();
-        Console.WriteLine(o.isColliding(bird.GetRect()));        
+        if (o.isColliding(bird.GetRect())) {
+            bird.isAlive = false;
+        }
     }
     if (obstacles.Count < PipesVisible) {
         if (obstacles.Count() == 0 || obstacles[obstacles.Count-1].SpaceForNew(PipesVisible)) {
@@ -38,6 +40,9 @@ void Draw() {
     Raylib.ClearBackground(Color.BLUE);
     Raylib.BeginDrawing();
     bird.Draw();
+    if (!bird.isAlive) {
+        Raylib.DrawText("The bird got dedded", Raylib.GetScreenWidth()/2, Raylib.GetScreenHeight()/2, 48, Color.BLACK);
+    }
     Raylib.EndDrawing();
     foreach (Obstacle o in obstacles) {
         o.Draw();

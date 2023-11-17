@@ -6,24 +6,24 @@ class Obstacle {
     Random random = new Random();
     Vector2 position = new Vector2(Raylib.GetScreenWidth(), 0);
     Rectangle collision = new Rectangle(0, 0, 32, 94);
-    int SPEED = 3;
+    public int speed = 3;
     public Obstacle() {
         texture.Width *= 4;
         texture.Height *= 4;
+        collision.Width *= 4;
+        collision.Height *= 4;
         position.Y = -random.Next((texture.Height - Raylib.GetScreenHeight()));
     }
     public void Tick() {
-        position.X -= SPEED;
+        position.X -= speed;
     }
     public bool isColliding(Rectangle rect) {
         collision.X = position.X;
         collision.Y = position.Y;
-        Console.WriteLine(rect);
-        Console.WriteLine(collision);
         if (Raylib.CheckCollisionRecs(collision, rect)) {
             return true;
         }
-        collision.Y = texture.Height - collision.Height;
+        collision.Y = position.Y + texture.Height - collision.Height;
         if (Raylib.CheckCollisionRecs(collision, rect)) {
             return true;
         }
