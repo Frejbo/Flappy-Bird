@@ -1,4 +1,5 @@
-﻿using Raylib_cs;
+﻿using System.Numerics;
+using Raylib_cs;
 
 Raylib.InitWindow(1280, 720, "Flappy Bird");
 Raylib.SetTargetFPS(60);
@@ -7,6 +8,8 @@ Bird bird = new Bird();
 bool gameIsRunning = false;
 int PipesVisible = 4;
 List<Obstacle> obstacles = new();
+
+AnimationPlayer anim = new AnimationPlayer(Raylib.LoadTexture("Assets/Player/bird1.png"), new Vector2(16, 16), 100);
 
 while (!Raylib.WindowShouldClose()) {
     if (!gameIsRunning) {
