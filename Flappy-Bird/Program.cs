@@ -12,6 +12,7 @@ while (!Raylib.WindowShouldClose()) {
     if (!gameIsRunning) {
         if (Raylib.IsKeyDown(KeyboardKey.KEY_SPACE)) {
             gameIsRunning = true;
+            bird.Tick();
         }
         Draw();
         continue;
@@ -26,7 +27,7 @@ while (!Raylib.WindowShouldClose()) {
     }
     if (obstacles.Count < PipesVisible) {
         if (obstacles.Count() == 0 || obstacles[obstacles.Count-1].SpaceForNew(PipesVisible)) {
-            obstacles.Add(new Obstacle());
+            obstacles.Add(new Obstacle(bird));
         }
     }
     if (obstacles[0].ShouldRemove()) {
@@ -39,12 +40,15 @@ while (!Raylib.WindowShouldClose()) {
 void Draw() {
     Raylib.ClearBackground(Color.BLUE);
     Raylib.BeginDrawing();
+    foreach (Obstacle o in obstacles) {
+        o.Draw();
+    }
     bird.Draw();
     if (!bird.isAlive) {
         Raylib.DrawText("The bird got dedded", Raylib.GetScreenWidth()/2, Raylib.GetScreenHeight()/2, 48, Color.BLACK);
     }
-    Raylib.EndDrawing();
-    foreach (Obstacle o in obstacles) {
-        o.Draw();
+    if (!gameIsRunning) {
+        Raylib.DrawText("Press SPACE to flap", Raylib.GetScreenWidth()/2, Raylib.GetScreenHeight()/2, 48, Color.BLACK);
     }
+    Raylib.EndDrawing();
 }

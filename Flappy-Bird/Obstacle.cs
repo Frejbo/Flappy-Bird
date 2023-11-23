@@ -7,7 +7,11 @@ class Obstacle {
     Vector2 position = new Vector2(Raylib.GetScreenWidth(), 0);
     Rectangle collision = new Rectangle(0, 0, 32, 94);
     public int speed = 3;
-    public Obstacle() {
+    Score score = new Score();
+    bool givenScore = false;
+    Bird bird;
+    public Obstacle(Bird b) {
+        bird = b;
         texture.Width *= 4;
         texture.Height *= 4;
         collision.Width *= 4;
@@ -15,7 +19,16 @@ class Obstacle {
         position.Y = -random.Next((texture.Height - Raylib.GetScreenHeight()));
     }
     public void Tick() {
+        if (!bird.isAlive) {
+            return;
+        }
         position.X -= speed;
+        if (position.X + texture.Width < Bird.posX) {
+            if (!givenScore) {
+                givenScore = true;
+                Score.score++;
+            }
+        }
     }
     public bool isColliding(Rectangle rect) {
         collision.X = position.X;
@@ -30,6 +43,7 @@ class Obstacle {
         return false;
     }
     public void Draw() {
+        score.DrawScore();
         Raylib.DrawTexture(texture, (int)position.X, (int)position.Y, Color.WHITE);
     }
     public bool ShouldRemove() {
