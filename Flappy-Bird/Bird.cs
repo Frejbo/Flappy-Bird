@@ -11,9 +11,10 @@ class Bird {
     float rotation = 0;
     public bool isAlive = true;
     Score score = new Score();
-    Texture2D texture = Raylib.LoadTexture("Assets/Player/Bird.png");
+    
+    AnimationPlayer animPlayer = new AnimationPlayer(Raylib.LoadTexture("Assets/Player/bird1.png"), new Vector2(16, 16));
     public Rectangle GetRect() {
-        return new Rectangle(posX, posY, texture.Width, texture.Height);
+        return new Rectangle(posX, posY, 16, 16);
     }
     public void Tick() {
         if (!IsOnScreen()) {
@@ -28,15 +29,13 @@ class Bird {
         posY += (int)(velocity * Raylib.GetFrameTime());
     }
     bool IsOnScreen() {
-        if (posY+texture.Height < 0 || posY > Raylib.GetScreenHeight()) {
+        if (posY+16 < 0 || posY > Raylib.GetScreenHeight()) {
             return false;
         }
         return true;
     }
     public void Draw() {
-        if(IsOnScreen()) {
-            Raylib.DrawTextureEx(texture, new Vector2(posX, posY), rotation, 3, Color.YELLOW);
-        }
         score.DrawScore();
+        animPlayer.Draw(new Vector2(posX, posY), new Vector2(3, 3), rotation);
     }
 }

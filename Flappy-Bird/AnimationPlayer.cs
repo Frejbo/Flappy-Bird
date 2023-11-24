@@ -8,20 +8,20 @@ class AnimationPlayer {
     public int frameLengthMS;
     public int frame = 0;
     Vector2 atlasCoords;
-    public AnimationPlayer(Texture2D t, Vector2 AtlasCoordinates, int frameLength = 500) {
+    public AnimationPlayer(Texture2D t, Vector2 AtlasCoordinates, int frameLength = 100) {
         texture = t;
         frameLengthMS = frameLength;
         atlasCoords = AtlasCoordinates;
         Play();
     }
 
-    public void Draw(Vector2 position, float rotation = 0, float scale = 1) {
+    public void Draw(Vector2 position, Vector2 scale, float rotation = 0) {
         Raylib.DrawTexturePro(
             texture,
             new Rectangle(atlasCoords.X * frame, 0, atlasCoords.X, atlasCoords.Y),
-            new Rectangle(0, 0, texture.Width * scale, texture.Height * scale),
-            position,
-            0,
+            new Rectangle(position.X, position.Y, atlasCoords.X * scale.X, atlasCoords.Y * scale.Y),
+            new Vector2(0, 0),
+            rotation,
             Color.WHITE
         );
     }

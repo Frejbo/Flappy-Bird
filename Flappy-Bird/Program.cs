@@ -9,8 +9,6 @@ bool gameIsRunning = false;
 int PipesVisible = 4;
 List<Obstacle> obstacles = new();
 
-AnimationPlayer anim = new AnimationPlayer(Raylib.LoadTexture("Assets/Player/bird1.png"), new Vector2(16, 16));
-
 while (!Raylib.WindowShouldClose()) {
     if (!gameIsRunning) {
         if (Raylib.IsKeyDown(KeyboardKey.KEY_SPACE)) {
@@ -21,7 +19,6 @@ while (!Raylib.WindowShouldClose()) {
         continue;
     }
     bird.Tick();
-    anim.Draw(new Vector2(50, 50));
 
     foreach (Obstacle o in obstacles) {
         o.Tick();
@@ -54,5 +51,6 @@ void Draw() {
     if (!gameIsRunning) {
         Raylib.DrawText("Press SPACE to flap", Raylib.GetScreenWidth()/2, Raylib.GetScreenHeight()/2, 48, Color.BLACK);
     }
+    
     Raylib.EndDrawing();
 }
