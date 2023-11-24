@@ -9,7 +9,7 @@ bool gameIsRunning = false;
 int PipesVisible = 4;
 List<Obstacle> obstacles = new();
 
-AnimationPlayer anim = new AnimationPlayer(Raylib.LoadTexture("Assets/Player/bird1.png"), new Vector2(16, 16), 100);
+AnimationPlayer anim = new AnimationPlayer(Raylib.LoadTexture("Assets/Player/bird1.png"), new Vector2(16, 16));
 
 while (!Raylib.WindowShouldClose()) {
     if (!gameIsRunning) {
@@ -21,6 +21,7 @@ while (!Raylib.WindowShouldClose()) {
         continue;
     }
     bird.Tick();
+    anim.Draw(new Vector2(50, 50));
 
     foreach (Obstacle o in obstacles) {
         o.Tick();
