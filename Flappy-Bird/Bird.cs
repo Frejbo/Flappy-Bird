@@ -12,7 +12,7 @@ class Bird {
     public bool isAlive = true;
     Score score = new Score();
     
-    AnimationPlayer animPlayer = new AnimationPlayer(Raylib.LoadTexture("Assets/Player/bird1.png"), new Vector2(16, 16));
+    AnimationPlayer animPlayer = new AnimationPlayer(Raylib.LoadTexture("Assets/Player/bird1.png"), new Vector2(16, 16), 100, false);
     public Rectangle GetRect() {
         return new Rectangle(posX, posY, 16, 16);
     }

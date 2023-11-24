@@ -8,10 +8,11 @@ class AnimationPlayer {
     public int frameLengthMS;
     public int frame = 0;
     Vector2 atlasCoords;
-    public AnimationPlayer(Texture2D t, Vector2 AtlasCoordinates, int frameLength = 100) {
+    public AnimationPlayer(Texture2D t, Vector2 AtlasCoordinates, int frameLength = 100, bool looping = true) {
         texture = t;
         frameLengthMS = frameLength;
         atlasCoords = AtlasCoordinates;
+        loop = looping;
         Play();
     }
 
@@ -26,15 +27,13 @@ class AnimationPlayer {
         );
     }
 
+    Thread workerThread = new Thread(Animate);
     public void Play() {
-        Thread workerThread = new Thread(Animate);
         workerThread.Start(this); // försöker fixa flera parametrar in i den
-
     }
 
     static public void Animate(object o) {
         AnimationPlayer animationplayer = (AnimationPlayer) o;
-        bool active = true;
         
         // counting the frames in texture spreadsheet
         int totalFrames = 0;
@@ -43,7 +42,7 @@ class AnimationPlayer {
         }
 
 
-        while (active) {
+        while (true) {
             if (animationplayer.frame == totalFrames) {
                 animationplayer.frame = 0;
             }
@@ -51,19 +50,11 @@ class AnimationPlayer {
                 animationplayer.frame++;
             }
 
-            if (animationplayer.loop) {
-                Thread.Sleep(animationplayer.frameLengthMS);
+            if (!animationplayer.loop) {
+                animationplayer.workerThread.Interrupt();
+
             }
-            else {
-                active = false;
-            }
+            Thread.Sleep(animationplayer.frameLengthMS);
         }
-        
-
-        // (int, float, string) t = (1, 4.5f, "hej");
-
-
-        Console.WriteLine(o);
     }
-    // I'll try to make this threaded
 }
