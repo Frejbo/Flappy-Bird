@@ -23,6 +23,7 @@ class Bird {
         velocity += GRAVITY;
         if (Raylib.IsKeyPressed(KeyboardKey.KEY_SPACE) && isAlive) {
             velocity = -JUMPSPEED;
+            animPlayer.Play();
         }
         velocity = Math.Clamp(velocity, -JUMPSPEED, JUMPSPEED);
         rotation = velocity / 50;

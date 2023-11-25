@@ -29,13 +29,13 @@ class AnimationPlayer {
 
     Thread workerThread = new Thread(Animate);
     public void Play() {
-        workerThread.Start(this); // försöker fixa flera parametrar in i den
+        workerThread.Start(this);
     }
 
     static public void Animate(object o) {
         AnimationPlayer animationplayer = (AnimationPlayer) o;
         
-        // counting the frames in texture spreadsheet
+        // counting the frames in texture spritesheet
         int totalFrames = 0;
         while (animationplayer.atlasCoords.X * totalFrames < animationplayer.texture.Width) {
             totalFrames++;
@@ -51,7 +51,8 @@ class AnimationPlayer {
             }
 
             if (!animationplayer.loop) {
-                animationplayer.workerThread.Interrupt();
+                break;
+                // animationplayer.workerThread.Interrupt();
 
             }
             Thread.Sleep(animationplayer.frameLengthMS);
