@@ -8,7 +8,7 @@ class AnimationPlayer {
     public int frameLengthMS;
     public int frame = 0;
     Vector2 atlasCoords;
-    public bool playing = false;
+    bool playing = false;
     Thread workerThread = new Thread(Animate);
     public AnimationPlayer(Texture2D t, Vector2 AtlasCoordinates, int frameLength = 100, bool looping = true) {
         texture = t;
@@ -30,7 +30,11 @@ class AnimationPlayer {
     }
 
     public void Play() {
+        // calling play while playing wont restart the animation, there is currently no way to cancel and restart it.
         playing = true;
+    }
+    public void Stop() {
+        playing = false;
     }
 
     static public void Animate(object o) {

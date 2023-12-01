@@ -6,11 +6,12 @@ class Obstacle {
     Random random = new Random();
     Vector2 position = new Vector2(Raylib.GetScreenWidth(), 0);
     Rectangle collision = new Rectangle(0, 0, 32, 94);
-    public int speed = 3;
+    public int speed = 4;
     Score score = new Score();
     bool givenScore = false;
     Bird bird;
     public Obstacle(Bird b) {
+        // för över parametrar till de faktiska variablerna
         bird = b;
         texture.Width *= 4;
         texture.Height *= 4;
@@ -19,6 +20,7 @@ class Obstacle {
         position.Y = -random.Next((texture.Height - Raylib.GetScreenHeight()));
     }
     public void Tick() {
+        // körs varje frame för att flytta dem framåt
         if (!bird.isAlive) {
             return;
         }
