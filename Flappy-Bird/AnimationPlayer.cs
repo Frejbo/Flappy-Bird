@@ -8,12 +8,14 @@ class AnimationPlayer {
     public int frameLengthMS;
     public int frame = 0;
     Vector2 atlasCoords;
+    public bool playing = false;
+    Thread workerThread = new Thread(Animate);
     public AnimationPlayer(Texture2D t, Vector2 AtlasCoordinates, int frameLength = 100, bool looping = true) {
         texture = t;
         frameLengthMS = frameLength;
         atlasCoords = AtlasCoordinates;
         loop = looping;
-        Play();
+        workerThread.Start(this);
     }
 
     public void Draw(Vector2 position, Vector2 scale, float rotation = 0) {
@@ -27,9 +29,8 @@ class AnimationPlayer {
         );
     }
 
-    Thread workerThread = new Thread(Animate);
     public void Play() {
-        workerThread.Start(this);
+        playing = true;
     }
 
     static public void Animate(object o) {
@@ -43,19 +44,18 @@ class AnimationPlayer {
 
 
         while (true) {
-            if (animationplayer.frame == totalFrames) {
-                animationplayer.frame = 0;
+            if (animationplayer.playing) {
+                if (animationplayer.frame == totalFrames) {
+                    animationplayer.frame = 0;
+                    if (!animationplayer.loop) {
+                        animationplayer.playing = false;
+                    }
+                }
+                else {
+                    animationplayer.frame++;
+                }
+                Thread.Sleep(animationplayer.frameLengthMS);
             }
-            else {
-                animationplayer.frame++;
-            }
-
-            if (!animationplayer.loop) {
-                break;
-                // animationplayer.workerThread.Interrupt();
-
-            }
-            Thread.Sleep(animationplayer.frameLengthMS);
         }
     }
 }

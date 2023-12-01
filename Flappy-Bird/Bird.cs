@@ -12,7 +12,10 @@ class Bird {
     public bool isAlive = true;
     Score score = new Score();
     
-    AnimationPlayer animPlayer = new AnimationPlayer(Raylib.LoadTexture("Assets/Player/bird1.png"), new Vector2(16, 16), 100, false);
+    AnimationPlayer animPlayer = new AnimationPlayer(Raylib.LoadTexture("Assets/Player/bird1.png"), new Vector2(16, 16), 100);
+    public Bird() {
+        animPlayer.Play();
+    }
     public Rectangle GetRect() {
         return new Rectangle(posX, posY, 16, 16);
     }
@@ -23,6 +26,7 @@ class Bird {
         velocity += GRAVITY;
         if (Raylib.IsKeyPressed(KeyboardKey.KEY_SPACE) && isAlive) {
             velocity = -JUMPSPEED;
+            animPlayer.loop = false;
             animPlayer.Play();
         }
         velocity = Math.Clamp(velocity, -JUMPSPEED, JUMPSPEED);
