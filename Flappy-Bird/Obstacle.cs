@@ -1,10 +1,8 @@
 using Raylib_cs;
 using System.Numerics;
 
-class Obstacle {
+class Obstacle : GameObject {
     Texture2D texture = Raylib.LoadTexture("Assets/Pipe.png");
-    Random random = new Random();
-    Vector2 position = new Vector2(Raylib.GetScreenWidth(), 0);
     Rectangle collision = new Rectangle(0, 0, 32, 94);
     public int speed = 4;
     Score score = new Score();
@@ -17,7 +15,7 @@ class Obstacle {
         texture.Height *= 4;
         collision.Width *= 4;
         collision.Height *= 4;
-        position.Y = -random.Next((texture.Height - Raylib.GetScreenHeight()));
+        position = new Vector2(Raylib.GetScreenWidth(), -randomizer.Next((texture.Height - Raylib.GetScreenHeight())));
     }
     public void Tick() {
         // körs varje frame för att flytta dem framåt
@@ -25,7 +23,7 @@ class Obstacle {
             return;
         }
         position.X -= speed;
-        if (position.X + texture.Width < Bird.posX) {
+        if (position.X + texture.Width < bird.position.X) {
             if (!givenScore) {
                 givenScore = true;
                 Score.score++;
