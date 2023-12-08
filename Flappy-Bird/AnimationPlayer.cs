@@ -9,12 +9,16 @@ class AnimationPlayer {
     public int frame = 0;
     Vector2 atlasCoords;
     bool playing = false;
+    int crossFadeMS = 0;
     Thread workerThread = new Thread(Animate);
-    public AnimationPlayer(Texture2D t, Vector2 AtlasCoordinates, int frameLength = 100, bool looping = true) {
+    List<int> frameVisibility = new();
+    int totalFrames = 0;
+    public AnimationPlayer(Texture2D t, Vector2 AtlasCoordinates, int frameLength = 100, bool looping = true, int crossFadeMilliSeconds = 0) {
         texture = t;
         frameLengthMS = frameLength;
         atlasCoords = AtlasCoordinates;
         loop = looping;
+        crossFadeMS = crossFadeMilliSeconds;
         workerThread.Start(this);
     }
 
@@ -30,7 +34,15 @@ class AnimationPlayer {
     }
 
     public void Play() {
-        // calling play while playing wont restart the animation, there is currently no way to cancel and restart it.
+        // calling play while playing wont restart the animation, there is currently no way to cancel the animation.
+        
+        // counting the frames in texture spritesheet
+        totalFrames = 0;
+        while (atlasCoords.X * totalFrames < texture.Width) {
+            frameVisibility.Add(0);
+            totalFrames++;
+        }
+
         playing = true;
     }
     public void Stop() {
@@ -39,17 +51,20 @@ class AnimationPlayer {
 
     static public void Animate(object o) {
         AnimationPlayer animationplayer = (AnimationPlayer) o;
-        
-        // counting the frames in texture spritesheet
-        int totalFrames = 0;
-        while (animationplayer.atlasCoords.X * totalFrames < animationplayer.texture.Width) {
-            totalFrames++;
-        }
 
-
+        float frameLoop = 0;
         while (true) {
+            int crossFadeMS = 200;
+            int frameLengthMS = 500;
+
+            frameLoop = ((float)(Raylib.GetTime()/100)*crossFadeMS % animationplayer.totalFrames);// / crossFadeMS;
+            Console.WriteLine(frameLoop);
+
+            continue;
+
+
             if (animationplayer.playing) {
-                if (animationplayer.frame == totalFrames) {
+                if (animationplayer.frame == animationplayer.totalFrames) {
                     animationplayer.frame = 0;
                     if (!animationplayer.loop) {
                         animationplayer.playing = false;
@@ -61,5 +76,9 @@ class AnimationPlayer {
                 Thread.Sleep(animationplayer.frameLengthMS);
             }
         }
+    }
+
+    static public void CrossFade(object o) {
+        
     }
 }

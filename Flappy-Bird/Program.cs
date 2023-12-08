@@ -9,7 +9,11 @@ bool gameIsRunning = false;
 int PipesVisible = 4;
 List<Obstacle> obstacles = new();
 
+DebugScene db = new();
 while (!Raylib.WindowShouldClose()) {
+    db.Run();
+    continue;
+
     if (!gameIsRunning) {
         if (Raylib.IsKeyDown(KeyboardKey.KEY_SPACE)) {
             gameIsRunning = true;
