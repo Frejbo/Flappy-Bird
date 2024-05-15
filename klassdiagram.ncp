@@ -1,0 +1,88 @@
+<Project>
+  <Name>FlappyBird</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.ClassDiagram" assembly="NClass.DiagramEditor, Version=2.8.0.2, Culture=neutral, PublicKeyToken=null">
+    <Name>Obstacle</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Obstacle</Name>
+        <Access>Public</Access>
+        <Location left="335" top="49" />
+        <Size width="203" height="281" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Texture2D texture</Member>
+        <Member type="Field">Rectangle collision</Member>
+        <Member type="Field">public int speed</Member>
+        <Member type="Field">new Score score</Member>
+        <Member type="Field">private bool givenScore</Member>
+        <Member type="Field">Bird bird</Member>
+        <Member type="Constructor">public Obstacle(Bird b)</Member>
+        <Member type="Method">public void Tick()</Member>
+        <Member type="Method">public bool isColliding(Rectangle rect)</Member>
+        <Member type="Method">public void Draw()</Member>
+        <Member type="Method">public bool ShouldRemove()</Member>
+        <Member type="Method">public bool SpaceForNew()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Score</Name>
+        <Access>Public</Access>
+        <Location left="147" top="407" />
+        <Size width="162" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public static int score</Member>
+        <Member type="Method">public void DrawScore()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Bird</Name>
+        <Access>Public</Access>
+        <Location left="77" top="49" />
+        <Size width="232" height="281" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public bool isAlive</Member>
+        <Member type="Field">AnimationPlayer animPlayer</Member>
+        <Member type="Field">float GRAVITY</Member>
+        <Member type="Field">int JUMPSPEED</Member>
+        <Member type="Field">new Score score</Member>
+        <Member type="Field">float velocity</Member>
+        <Member type="Constructor">public Bird()</Member>
+        <Member type="Method">public void Draw()</Member>
+        <Member type="Method">public Rectangle GetRect()</Member>
+        <Member type="Method">public bool isOnScreen()</Member>
+        <Member type="Method">public void Tick()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GameObject</Name>
+        <Access>Public</Access>
+        <Location left="335" top="407" />
+        <Size width="203" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public Vector2 position</Member>
+        <Member type="Field">public Random randomizer</Member>
+        <Member type="Field">public float rotation</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Containers />
+    <Relationships>
+      <Relationship type="Dependency" first="0" second="3">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="2" second="3">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>199</X>
+          <Y>355</Y>
+        </BendPoint>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
