@@ -1,11 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "y5Ik1mw76v7A61KaiqFaUdK9ykR+jgzGqbS5YAUNIuq9qJEYQUVKdzQAWx/3db/0i5Dr2Abwdm+Gj90YDRmG5Q==",
+  "dgSpecHash": "02F5lRwQgkjQCFPMVhf5/e4r/iSTzTuzg5TLcDfBkuIbJGnY4aISAvsR10rj01IG1NF5YYNbmSf9FB4qBdYzZQ==",
   "success": true,
   "projectFilePath": "c:\\Users\\Frej\\Documents\\Programmering\\Flappy-Bird\\Flappy-Bird\\Flappy-Bird.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Frej\\.nuget\\packages\\raylib-cs\\5.0.0\\raylib-cs.5.0.0.nupkg.sha512",
-    "C:\\Users\\Frej\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+    "C:\\Users\\Frej\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Frej\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\Frej\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.26\\microsoft.windowsdesktop.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\Frej\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.26\\microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\Frej\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.26\\microsoft.netcore.app.host.win-x64.6.0.26.nupkg.sha512"
   ],
   "logs": []
 }

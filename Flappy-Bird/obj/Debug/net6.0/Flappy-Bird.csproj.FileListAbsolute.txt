@@ -47,3 +47,4 @@ c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\A
 c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Tileset\Style 3\PipeStyle3.png
 c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Tileset\Style 3\TileStyle3.png
 c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\bin\Debug\net6.0\Assets\Player\Bird.png
+c:\Users\Frej\Documents\Programmering\Flappy-Bird\Flappy-Bird\obj\Debug\net6.0\Flappy-Bird.sourcelink.json
